@@ -46,10 +46,14 @@ html, body {
 /* Header */
 header {
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
     background-color: var(--primary-color);
     color: var(--secondary-color);
     border-bottom: 3px solid var(--accent-color);
+}
+
+header .profile-container {
+    margin-bottom: 1rem;
 }
 
 header h1 {
@@ -61,6 +65,19 @@ header h1 {
 header p {
     font-style: italic;
     color: var(--light-gray);
+}
+
+/* Profile Image */
+.profile-image {
+    width: 100%;
+    max-width: 200px; /* Set a maximum width for larger screens */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 50%; /* Circular image */
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        0 0 0 8px rgba(255, 255, 255, 0.9);
+    transition: transform 0.3s ease;
 }
 
 /* Modern Navigation */
@@ -99,37 +116,11 @@ nav ul li a:hover i {
     transform: scale(1.1);
 }
 
-/* Main Layout */
-.main-container {
-    display: grid;
-    grid-template-columns: 350px 1fr; /* Adjust 350px to your preferred image width */
-    gap: 2rem;
-    max-width: 1400px; /* Increased to accommodate split layout */
-    margin: 0 auto;
-    padding: 2rem;
-    position: relative;
-}
-
-/* Profile Image Container */
-.profile-container {
-    position: sticky;
-    top: 2rem;
-    height: fit-content;
-}
-
-.profile-image {
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: 16px;
-    box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.1),
-        0 0 0 8px rgba(255, 255, 255, 0.9);
-    transition: transform 0.3s ease;
-}
-
 /* Content Container */
 .content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -139,19 +130,20 @@ nav ul li a:hover i {
 .section {
     background: var(--light-gray);
     padding: 2.5rem;
-    margin-bottom: 2rem;
-    border-radius: 12px;
+    border-radius: 0; /* Remove border-radius for sharp edges */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     color: var(--text-color);
+    text-align: left; /* Ensure text alignment */
 }
 
 .section h2 {
     font-size: clamp(1.5rem, 3vw, 2rem);
     letter-spacing: -0.01em;
     margin-bottom: 1.5rem;
-    border-bottom: none; /* Remove border, use spacing instead */
+    border-bottom: none;
     position: relative;
     padding-bottom: 1rem;
+    text-align: left; /* Ensure heading alignment */
 }
 
 .section h2::after {
@@ -162,6 +154,43 @@ nav ul li a:hover i {
     width: 60px;
     height: 3px;
     background: var(--accent-color);
+}
+
+/* Skill Bars */
+.skill-bar {
+    margin-bottom: 1.5rem;
+}
+
+.skill-bar .label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.skill-bar .label::after {
+    content: attr(data-level);
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.skill-bar .bar {
+    height: 8px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-bar .fill {
+    height: 100%;
+    background: var(--accent-color);
+    transform-origin: left;
+    animation: fillBar 1.5s ease-out forwards;
+}
+
+@keyframes fillBar {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
 }
 
 /* Work Experience */
@@ -227,60 +256,14 @@ nav ul li a:hover i {
     display: block;
 }
 
-/* Modern Skill Bars */
-.skill-bar {
-    margin-bottom: 1.5rem;
-}
-
-.skill-bar .label {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.75rem;
-    font-size: 0.95rem;
-}
-
-.skill-bar .label::after {
-    content: attr(data-level);
-    color: var(--accent-color);
-    font-weight: 600;
-}
-
-.skill-bar .bar {
-    height: 8px;
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.skill-bar .fill {
-    height: 100%;
-    background: var(--accent-color);
-    transform-origin: left;
-    animation: fillBar 1.5s ease-out forwards;
-}
-
-@keyframes fillBar {
-    from { transform: scaleX(0); }
-    to { transform: scaleX(1); }
-}
-
 /* Media Query for Mobile */
-@media (max-width: 1024px) {
-    .main-container {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-    }
-
-    .profile-container {
-        position: relative;
-        top: 0;
-        margin-bottom: 2rem;
-    }
-
+@media (max-width: 768px) {
     .profile-image {
-        width: 50%;
-        margin: 0 auto;
-        display: block;
+        max-width: 150px; /* Adjust for smaller screens */
+    }
+
+    .content-container {
+        padding: 1rem;
     }
 }
 
