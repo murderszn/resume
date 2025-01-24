@@ -87,6 +87,7 @@ nav ul {
     justify-content: center;
     gap: 1rem;
     padding: 1rem 0;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 nav ul li a {
@@ -265,6 +266,11 @@ nav ul li a:hover i {
     .content-container {
         padding: 1rem;
     }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }
 
 /* Contact section styles */
@@ -306,6 +312,8 @@ nav ul li a:hover i {
     display: inline-flex;
     align-items: center;
     transition: background-color 0.3s ease;
+    font-weight: 600;
+    margin-top: 1rem;
 }
 
 .download-btn:hover {
@@ -470,6 +478,98 @@ body {
 
 .project h3 {
     color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.project p {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-links a {
+    color: var(--link-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+    color: var(--link-hover-color);
+}
+
+.chat-ai-btn {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(255, 0, 255, 0.3));
+    color: var(--secondary-color);
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: background 0.5s ease, transform 0.3s ease;
+    font-weight: 600;
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.chat-ai-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+.chat-ai-btn:hover::before {
+    top: -30%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
+}
+
+.chat-ai-btn:hover {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.5), rgba(255, 0, 255, 0.5));
+    transform: scale(1.05);
+}
+
+.chat-ai-btn i {
+    margin-right: 8px;
+}
+
+#projects {
+    padding: 2rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.project {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project h3 {
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
 

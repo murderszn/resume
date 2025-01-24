@@ -25,12 +25,18 @@
         <nav>
             <ul>
                 <li><a href="https://www.linkedin.com/in/jjohnso75/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                <li><a href="https://daedalus-9f477.web.app/" target="_blank"><i class="fas fa-globe"></i> Daedalus Website</a></li>
                 <li><a href="https://github.com/murderszn" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
                 <li><a href="mailto:jjohnso75@gmail.com"><i class="fas fa-envelope"></i> Email</a></li>
-                <li><a href="https://daedalus-9f477.web.app/" target="_blank"><i class="fas fa-globe"></i> Website</a></li>
-                <li><a href="https://www.chess.com/stats/live/rapid/jahflyx" target="_blank"><i class="fas fa-chess"></i> Chess.com</a></li>
+                <li><a href="https://www.chess.com/stats/live/rapid/jahflyx" target="_blank"><i class="fas fa-chess"></i> Play Chess</a></li>
             </ul>
         </nav>
+        <a href="Resume_JoshJonson_2025.pdf" class="download-btn" download>
+            <i class="fas fa-download"></i> Download Resume
+        </a>
+        <a href="https://auxilium-ai-marketplace.web.app" class="chat-ai-btn" id="chatAiButton" target="_blank">
+            <i class="fas fa-robot"></i> Auxilium AI
+        </a>
     </header>
 
     <div class="main-container">
@@ -189,6 +195,18 @@
                         <a href="https://github.com/murderszn/shared-calendar" target="_blank"><i class="fab fa-github"></i> View Code</a>
                     </div>
                 </div>
+                <div class="project">
+                    <h3>Virtual Arcade</h3>
+                    <p>JavaScript-based virtual arcade developed with my kids, featuring multiple mini-games.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/murderszn/ai-games/blob/main/game.js" target="_blank">
+                            <i class="fas fa-code"></i> View Code
+                        </a>
+                        <a href="/daadalus-man.html" target="_blank">
+                            <i class="fas fa-globe"></i> View Site
+                        </a>
+                    </div>
+                </div>
             </section>
 
             <section id="education" class="section education-certifications">
@@ -212,16 +230,16 @@
             <section id="ventures" class="section business-ventures">
                 <h2>Business Ventures</h2>
                 <div class="venture">
-                    <h3>Daedalus Solutions | 2023 - Present</h3>
+                    <h3>Daedalus Solutions Inc</h3>
                     <ul>
                         <li>Co-founded Daedalus Solutions to empower organizations with multi-agent AI workflows and scalable solutions that reduce operational inefficiencies.</li>
                     </ul>
                 </div>
                 <br>
                 <div class="venture">
-                    <h3>Untapped Scholars</h3>
+                    <h3>Untapped Scholars Inc</h3>
                     <ul>
-                        <li>Empowering at-risk youth through scholarships and mentorship.</li>
+                        <li>Co-founded a 501c3 empowering at-risk youth through scholarships and mentorship.</li>
                     </ul>              
                 </div>
                 <br>
@@ -286,6 +304,11 @@
                 icon.className = 'fas fa-chevron-up';
             }
         }
+
+        document.getElementById('chatAiButton').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+            window.open('https://auxilium-ai-marketplace.web.app', '_blank', 'width=800,height=600');
+        });
     </script>
 </body>
 </html>
